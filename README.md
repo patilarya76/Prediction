@@ -192,7 +192,14 @@ source venv/bin/activate
 pip install -r requirements.txt
 ```
 
-### 3. Run the ML Pipeline via CLI
+### 3. Run the Interactive Web Application (Live UI)
+```bash
+streamlit run app.py
+```
+* Once launched, open your browser at `http://localhost:8501`.
+* You can test custom passenger profiles, switch between Logistic Regression and Random Forest in real-time, view survival probabilities, and explore interactive metrics and confusion matrices!
+
+### 4. Run the ML Pipeline via CLI
 ```bash
 # Step 1: Verify data preprocessing & feature engineering
 python src/data_preprocessing.py
@@ -204,10 +211,34 @@ python src/train_model.py
 python src/evaluate_model.py
 ```
 
-### 4. Run the Jupyter Notebook
+### 5. Run the Jupyter Notebook
 ```bash
 jupyter notebook notebooks/titanic_survival_prediction.ipynb
 ```
+
+---
+
+## 🌐 Where & How to Deploy (Free Cloud Deployment)
+
+### Option 1: Streamlit Community Cloud (Recommended for Resumes)
+1. Push this repository to your GitHub account:
+   ```bash
+   git push -u origin main
+   ```
+2. Go to [share.streamlit.io](https://share.streamlit.io/) and log in with your GitHub account.
+3. Click **"Create app"** -> **"Deploy a public app from GitHub"**.
+4. Select your repository: `<your-username>/titanic-survival-prediction`.
+5. Set:
+   * **Branch**: `main`
+   * **Main file path**: `app.py`
+6. Click **Deploy!** Within 2 minutes, your live web app will be live at:
+   `https://<your-username>-titanic-survival-prediction.streamlit.app`
+7. Add this live URL directly next to your project title on your resume!
+
+### Option 2: Hugging Face Spaces
+1. Go to [huggingface.co/spaces](https://huggingface.co/spaces) and create a **New Space**.
+2. Select **Streamlit** as the Space SDK and choose **Public (Free)**.
+3. Push or sync this repository to your Hugging Face Space repository. Your app will build and run immediately.
 
 ---
 
