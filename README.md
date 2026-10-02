@@ -3,13 +3,18 @@
 [![Python](https://img.shields.io/badge/Python-3.13%2B-blue.svg)](https://www.python.org/)
 [![scikit-learn](https://img.shields.io/badge/scikit--learn-1.9%2B-orange.svg)](https://scikit-learn.org/)
 [![pandas](https://img.shields.io/badge/pandas-3.0%2B-darkblue.svg)](https://pandas.pydata.org/)
+[![Streamlit App](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://prediction-7xazbgntaetcebmor9zkpe.streamlit.app/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
+
+> 🚀 **Live Interactive Demo:** **[https://prediction-7xazbgntaetcebmor9zkpe.streamlit.app/](https://prediction-7xazbgntaetcebmor9zkpe.streamlit.app/)**  
+> Test passenger profiles in real-time, toggle between Logistic Regression and Random Forest models, view prediction probabilities, and inspect evaluation metrics directly in your browser.
 
 An end-to-end, production-oriented Data Science project predicting passenger survival aboard the RMS Titanic. Built using **Python, pandas, scikit-learn, Matplotlib, and Seaborn**, featuring domain-driven feature engineering, a strict data-leakage-free preprocessing architecture, cross-validation, and comprehensive model benchmarking.
 
 ---
 
 ## 📌 Table of Contents
+- [🚀 Live Web App Demo](#-live-web-app-demo)
 - [Project Objective](#-project-objective)
 - [Dataset Overview](#-dataset-overview)
 - [Machine Learning Workflow](#-machine-learning-workflow)
@@ -19,7 +24,22 @@ An end-to-end, production-oriented Data Science project predicting passenger sur
 - [Key Business & Historical Findings](#-key-business--historical-findings)
 - [Project Architecture](#-project-architecture)
 - [Setup & Run Instructions](#-setup--run-instructions)
+- [Deployment Information](#-deployment-information)
 - [Limitations & Future Improvements](#-limitations--future-improvements)
+
+---
+
+## 🌐 Live Web App Demo
+The project is deployed and accessible worldwide via Streamlit Community Cloud:
+
+🔗 **Production URL**: **[https://prediction-7xazbgntaetcebmor9zkpe.streamlit.app/](https://prediction-7xazbgntaetcebmor9zkpe.streamlit.app/)**
+
+### Features Available in the Web App:
+* **Interactive Passenger Input**: Adjust Age, Sex, Class, Fare, Embarked port, and traveling family size.
+* **Dual Model Inference**: Switch in real-time between **Logistic Regression (85.5% Acc)** and **Random Forest (82.7% Acc)**.
+* **Instant Prediction & Confidence**: Outputs "SURVIVED" or "PERISHED" with probability progress bars.
+* **Model Analytics**: Interactive inspection of Confusion Matrices, ROC curves, and Gini feature importances.
+
 
 ---
 
@@ -218,27 +238,22 @@ jupyter notebook notebooks/titanic_survival_prediction.ipynb
 
 ---
 
-## 🌐 Where & How to Deploy (Free Cloud Deployment)
+## 🌐 Deployment Information
 
-### Option 1: Streamlit Community Cloud (Recommended for Resumes)
-1. Push this repository to your GitHub account:
+### 🚀 Active Production Deployment
+* **Live App URL**: **[https://prediction-7xazbgntaetcebmor9zkpe.streamlit.app/](https://prediction-7xazbgntaetcebmor9zkpe.streamlit.app/)**
+* **Hosting Platform**: Streamlit Community Cloud
+* **Continuous Deployment**: Connected to GitHub repository `main` branch. Any updates pushed to GitHub automatically trigger a seamless zero-downtime redeployment.
+
+### Continuous Deployment Workflow:
+1. Pushing commits to GitHub updates the repository:
    ```bash
-   git push -u origin main
+   git add .
+   git commit -m "update: improvements"
+   git push origin main
    ```
-2. Go to [share.streamlit.io](https://share.streamlit.io/) and log in with your GitHub account.
-3. Click **"Create app"** -> **"Deploy a public app from GitHub"**.
-4. Select your repository: `<your-username>/titanic-survival-prediction`.
-5. Set:
-   * **Branch**: `main`
-   * **Main file path**: `app.py`
-6. Click **Deploy!** Within 2 minutes, your live web app will be live at:
-   `https://<your-username>-titanic-survival-prediction.streamlit.app`
-7. Add this live URL directly next to your project title on your resume!
+2. Streamlit Cloud listens to GitHub webhooks, pulls the latest commit, re-installs dependencies from `requirements.txt` if changed, and refreshes the live service automatically.
 
-### Option 2: Hugging Face Spaces
-1. Go to [huggingface.co/spaces](https://huggingface.co/spaces) and create a **New Space**.
-2. Select **Streamlit** as the Space SDK and choose **Public (Free)**.
-3. Push or sync this repository to your Hugging Face Space repository. Your app will build and run immediately.
 
 ---
 
